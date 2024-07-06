@@ -1,0 +1,337 @@
+/* Consolidate font imports */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/CSS/Assets/main_background.jpg');
+    background-size: cover; /* Ensure the image covers the whole screen */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+
+main {
+    margin-top: 40px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+}
+
+
+/* Navigation Bar Section */
+:root {
+    --font-primary: 'Josefin Sans', sans-serif;
+    --font-secondary: 'Lora', serif;
+    --color-primary: #ffffff; /* Adjust primary color as needed */
+    --color-background-hover: white; /* Background color for hover state */
+    --transition-speed: 0.3s; /* Transition speed for hover effects */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    font: 500 1.3em var(--font-primary);
+}
+
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.site-nav ul li {
+    margin: 0 20px;
+}
+
+.site-nav ul li a {
+    position: relative; /* Added for positioning the pseudo-element */
+    text-decoration: none;
+    transition: color var(--transition-speed) ease; /* Updated to only include color transition */
+    border-radius: 20px;
+    color: var(--color-primary);
+    overflow: hidden; /* Ensures the pseudo-element does not extend outside */
+}
+
+.site-nav ul li a::before {
+    content: '';    
+    position: absolute;
+    width: 0;
+    height: 2px; /* Height of the underline */
+    bottom: -30%; /* Position the underline at the bottom of the element */
+    left: 50%; /* Start from the center */
+    background-color: var(--color-primary); /* Color of the underline */
+    transition: width var(--transition-speed) ease, left var(--transition-speed) ease; /* Animate width and starting position */
+}
+
+.site-nav ul li a.about-page::before,
+.site-nav ul li a:hover::before {
+    width: 130%; /*rumus left = (width - 100%) / 2*/
+    left: -15%;
+}
+
+/* Content section */
+.main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    animation: fadeIn 1s;
+}
+
+.main-section h1 {
+    padding-bottom: 10px;
+}
+
+.about-section {
+    width: 70%;
+    padding: 40px; /* Adds padding around the content */
+    border-radius: 8px; /* Softens the edges */
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 1s;
+    color: #bbdcff;
+    transition: transform 0.3s; /* Add a smooth scaling effect */
+}
+
+.about-section h1 {
+    color: #bbdcff; /* Theme color for the heading */
+    margin-bottom: 20px; /* Adds space below the heading */
+    text-align: center; /* Centers the heading */
+}
+
+.about-description {
+    line-height: 1.6; /* Improves readability */
+    text-align: center; /* Justifies the text for a clean look */
+    color: #ffffff; /* Dark grey color for better readability */
+}
+
+.about-section:hover {
+    transform: scale(1.05); /* Adjust the scale value as needed */
+}
+
+.team-section {
+    text-align: center;
+    padding: 40px;
+    margin: 20px;
+}
+
+.team-section h1 {
+    margin-bottom: 30px;
+    font: 500 2.2em 'Lora', serif;
+    color: rgb(170, 227, 255) ;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Adjusts to 5 columns to fit all members in one row */
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    background-color: rgba(255, 255, 255, 0.9); /* 90% opacity */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.team-member h2 {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #666;
+}
+
+.services-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f8ff; /* Light background to keep it fresh */
+    border-radius: 20px; /* Rounded corners */
+}
+
+.services-section .service-item {
+    color: inherit;
+    text-decoration: none; /* Removes underline from links */
+}
+
+.services-section h1 {
+    margin-bottom: 20px;
+    color: #333; /* Dark color for contrast */
+}
+
+.services-section p {
+    text-decoration: none;
+    margin-bottom: 30px;
+    color: #666; /* Slightly lighter for less emphasis */
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.service-item {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border-radius: 4px; /* Softer edges */
+    padding: 15px; /* Reduced padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.service-item:hover {
+    transform: translateY(-10px); /* Subtle lift effect on hover */
+}
+
+.service-item img {
+    width: 64px; /* Icon size */
+    margin-bottom: 10px;
+}
+
+.service-item h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.service-item p {
+    color: #666;
+}
+
+.contact-section {
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2pc;
+}
+
+.contact-section h1 {
+    color: #ffffff;
+    margin-bottom: 16px;
+    font: 500 2.2em 'Lora', serif;
+}
+
+.contact-section p {
+    color: #c0c0c0;
+    margin-bottom: 16px;
+    font: 500 1.5em 'Josefin Sans', serif;
+    text-align: center;
+}
+
+.social-media {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Maintains the 2-column layout */
+    gap: 30px; /* Increases the gap between items for better spacing */
+    margin-top: 20px;
+    width: 100%;
+}
+
+.social-media a {
+    display: flex;
+    flex-direction: column; /* Aligns the icon above the text */
+    align-items: center; /* Centers the items */
+    gap: 10px; /* Adds space between the icon and the text */
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits the text color from the parent */
+    font: 500 1.1em 'Josefin Sans', serif;
+}
+
+.social-media i {
+    font-size: 24px; /* Increases the icon size for better visibility */
+    color: #007bff;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smoothens the transition */
+}
+
+.social-media a:hover i {
+    transform: scale(1.15); /* Subtle scaling effect on hover */
+    color: #0056b3; /* Changes color on hover for visual feedback */
+}
+
+/* Adjusts the layout for smaller screens */
+@media (max-width: 768px) {
+    .social-media {
+        grid-template-columns: 1fr; /* Stacks items in a single column on small screens */
+        gap: 20px; /* Adjusts the gap for better spacing in a stacked layout */
+    }
+}
+
+.site-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    font: 500 1em 'Lora', serif;
+    color: var(--color-primary);
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Style/main.css">
+    <link rel="stylesheet" href="/CSS/Style/maps.css">
+    <title>SkyWatch</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header class="site-header">
+            <a href="index.html">
+                <img src="/CSS/Assets/SkyWatch_logo_transparent.svg" alt="SkyWatch Logo" class="logo">
+            </a>
+            <nav class="site-nav" role="navigation">
+                <ul>
+                    <li><a href="index.html" class="home-page">Home</a></li>
+                    <li><a href="forecast.html" class="forecast-page">Forecast</a></li>
+                    <li><a href="news.html" class="news-page">News</a></li>
+                    <li><a href="maps.html" class="map-page">Map</a></li>
+                    <li><a href="about.html" class="about-page">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Main Content Section -->
+        <main>
+            <section id="news" class="weather-section">
+                <div class="weather-map" id="Map_enomWLpLKMbTomLapLKKKhoLocoga">
+                    <!-- Fallback link in case the map does not load -->
+                    <p class="map-fallback" style="display: none;">Map failed to load. Visit the <a href="https://www.example.com">map website</a> for more information.</p>
+                    <!-- Fallback content for when JavaScript is disabled -->
+                    <noscript class="weather-map-error">
+                        <p>Map failed to load. Visit the <a href="https://www.example.com">map website</a> for more information.</p>
+                    </noscript>
+                </div>
+            </section>
+        </main>
+    
+        <footer class="site-footer">
+            <p>&copy; 2024 SkyWatch. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="https://www.tutiempo.net/s-widget/fm/enomWLpLKMbTomLapLKKKhoLocoga.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var mapContainer = document.getElementById('Map_enomWLpLKMbTomLapLKKKhoLocoga');
+            // Check if the map script loaded any content
+            if (mapContainer.innerHTML.trim().length === 0) {
+                // If not, display the fallback content
+                mapContainer.querySelector('.map-fallback').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,579 @@
+/* Consolidate font imports */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Navigation Bar Section */
+:root {
+    --font-primary: 'Josefin Sans', sans-serif;
+    --font-secondary: 'Lora', serif;
+    --color-primary: #ffffff;
+    /* Adjust primary color as needed */
+    --color-background-hover: white;
+    /* Background color for hover state */
+    --transition-speed: 0.3s;
+    /* Transition speed for hover effects */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    font: 500 1.3em var(--font-primary);
+}
+
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.site-nav ul li {
+    margin: 0 10px;
+}
+
+.site-nav ul li a {
+    position: relative;
+    /* Added for positioning the pseudo-element */
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+    /* Updated to only include color transition */
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: var(--color-primary);
+    overflow: hidden;
+    /* Ensures the pseudo-element does not extend outside */
+}
+
+.site-nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    /* Height of the underline */
+    bottom: 0;
+    /* Position the underline at the bottom of the element */
+    left: 50%;
+    /* Start from the center */
+    background-color: transparent;
+    /* Color of the underline */
+    transition: all var(--transition-speed) ease;
+    /* Animate width and starting position */
+}
+
+.site-nav ul li a.home-page::before,
+.site-nav ul li a:hover::before {
+    width: 100%;
+    /*rumus left = (width - 100%) / 2*/
+    left: 0;
+    background-color: var(--color-primary);
+    /* Color of the underline */
+}
+
+.content-section {
+    border-radius: 10px;
+}
+
+.combined-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: -10px;
+    padding: 50px;
+    transition: width 0.5s ease-in-out;
+    position: relative;
+}
+
+/* Weather Section */
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;    
+}
+
+main h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+main p {
+    font-size: 1em;
+}
+
+.weather-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.weather-section {
+    display: flex;
+    position: absolute;
+    right: 10%;
+    z-index: 10;
+    flex-direction: row;
+    align-items: left;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: rgba(5, 5, 5, 0.34);
+    border-radius: 8px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(200, 200, 200, 0.3);
+    color: #fff;
+    transition: transform 0.3s ease;
+    font-family: var(--font-primary);
+    background-color: #4c9beb;
+}
+
+.weather-section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 10px;
+}
+
+.notification {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: #333;
+    padding: 10px;
+    width: 20%;
+    transition: width 0.5s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.notification:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+    .weather-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.weather-card {
+    z-index: 4;
+    width: 350px;
+    height: 475px;
+    position: relative;
+    left: -23px;
+    padding: 25px;
+    background: radial-gradient(178.94% 106.41% at 26.42% 106.41%, #FFF7B1 0%, rgba(255, 255, 255, 0) 71.88%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+        , #FFFFFF;
+    box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01), 0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09), 0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 23px;
+    transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 700ms ease;
+}
+
+.weather-card:hover {
+    transform: scale(1.05);
+}
+
+.weather-container {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.7);
+}
+
+.cloud {
+    width: 280px;
+}
+
+.sun {
+    width: 150px;
+    height: 150px;
+    background: -webkit-linear-gradient(to right, #fcbb04, #fffc00);
+    background: linear-gradient(to right, #fcbb04, #fffc00);
+    border-radius: 100px;
+    display: inline;
+    position: absolute;
+}
+
+.sunshine {
+    animation: sunshines 2s infinite;
+}
+
+@keyframes sunshines {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+@keyframes clouds {
+    0% {
+        transform: translateX(15px);
+    }
+
+    50% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(15px);
+    }
+}
+
+.front {
+    padding-top: 45px;
+    margin-left: 25px;
+    display: inline;
+    position: absolute;
+    z-index: 11;
+    animation: clouds 8s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.back {
+    margin-top: -30px;
+    margin-left: 150px;
+    z-index: 12;
+    animation: clouds 12s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.right-front {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% 50% 50% 0%;
+    background-color: #4c9beb;
+    display: inline-block;
+    margin-left: -25px;
+    z-index: 5;
+}
+
+.left-front {
+    width: 65px;
+    height: 65px;
+    border-radius: 50% 50% 0% 50%;
+    background-color: #4c9beb;
+    display: inline-block;
+    z-index: 5;
+}
+
+.right-back {
+    width: 50px;
+    height: 50px;
+    border-radius: 50% 50% 50% 0%;
+    background-color: #4c9beb;
+    display: inline-block;
+    margin-left: -20px;
+    z-index: 5;
+}
+
+.left-back {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 0% 50%;
+    background-color: #4c9beb;
+    display: inline-block;
+    z-index: 5;
+}
+
+.weather-header {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    font: 400 1.2em var(--font-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: rgba(87, 77, 51, 0.76);
+}
+
+.weather-header span:first-child {
+    word-break: break-all;
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 135%;
+    color: rgba(87, 77, 51, 0.66);
+}
+
+.weather-header span:last-child {
+    font-weight: 500;
+    font-size: 20px;
+    font-family: var(--font-primary);
+    line-height: 105%;
+    color: rgba(87, 77, 51, 0.43);
+}
+
+.temp {
+    position: absolute;
+    left: 25px;
+    bottom: 12px;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+    color: rgba(87, 77, 51, 1);
+}
+
+.temp-scale {
+    width: 100px;
+    height: 36px;
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 9px;
+}
+
+.temp-scale span {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 134.49%;
+    color: rgba(87, 77, 51, 0.66);
+}
+
+.forecast-section {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+    position: relative;
+    right: 68px;
+    font: 400 0.9em var(--font-primary);
+    color: rgba(0, 0, 0, 0.677);
+    border-radius: 10px;
+    background: #f0f4f8;
+    padding: 30px 70px 70px 70px; /* Adjusted padding: top right bottom left */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transform: translateX(-100%);
+}
+
+.forecast-section.active {
+    opacity: 1; /* This line might be redundant if opacity is controlled via animations */
+}
+
+.hidden {
+    display: none;
+}
+
+.slide-in {
+    animation: slideIn 500ms forwards;
+}
+
+.slide-out {
+    animation: slideOut 500ms forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+.forecast-title h2 {
+    text-align: center;
+    margin-top: 0; /* Adjust the top margin to 0 or a small value as needed */
+    margin-bottom: 20px;
+    font: 500 1.5em var(--font-secondary);
+}
+
+.forecast-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.city-forecast {
+    flex-basis: calc(30% - 20px);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    height: 120px;
+    font: 400 1em var(--font-primary);
+    position: relative;
+    top: 20px;
+}
+
+.city-forecast:hover {
+    transform: translateY(-5px);
+}
+
+.weather-icon {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.temperature {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.weather-description {
+    color: #666;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .forecast-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .city-forecast {
+        width: 80%;
+    }
+}
+
+
+/* Footer Content */
+
+
+.warning-system {
+    background-color: #EA8A44; /* Bright yellow for attention */
+    color: #333; /* Dark text for readability */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden; /* For the pseudo-elements animations */
+    width: calc(100% - 220px); /* Increase total margin to reduce width */
+    margin: 20px auto; /* Center the element with automatic horizontal margins */
+}
+
+.warning-system h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #D8000C; /* Red color for urgency */
+}
+
+.warning-system p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Adding a subtle animation to grab attention */
+.warning-system .dismiss-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #333;
+    font-size: 20px;
+}
+
+.warning-system::before, .warning-system::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 0;
+    animation: moveSlant 5s linear infinite;
+}
+
+.warning-system::after {
+    background: rgba(255, 255, 255, 0.1);
+    animation-delay: -2.5s;
+}
+
+@keyframes moveSlant {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.warning-system h2, .warning-system p {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.warning-system.fade-out {
+    animation: fadeOut 0.5s forwards; /* Adjust duration as needed */
+}
+/* Ensure content is above the pseudo-elements */
+
+.site-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    font: 500 1em 'Lora', serif;
+    color: var(--color-primary);
+}

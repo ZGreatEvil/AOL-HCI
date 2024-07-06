@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Style/main.css"> <!-- Link to external CSS for background -->
+    <link rel="stylesheet" href="/CSS/Style/home.css"> <!-- Link to external CSS for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to external CSS for icons -->
+    <title>SkyWatch</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header class="site-header">
+            <!-- Navigation Bar -->
+            <a href="#">
+                <img src="CSS/Assets/SkyWatch_logo_transparent.svg" alt="SkyWatch Logo" class="logo">
+            </a>
+            <nav class="site-nav" role="navigation">
+                <ul>
+                    <li><a href="#" class="home-page">Home</a></li>
+                    <li><a href="forecast.html" class="forecast-page">Forecast</a></li>
+                    <li><a href="news.html" class="news-page">News</a></li>
+                    <li><a href="maps.html" class="map-page">Map</a></li>
+                    <li><a href="about.html" class="about-page">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="combined-container">
+            <!-- Main Content Section -->
+            <main class="weather-content">
+                <!-- Weather Forecast Section -->
+                <div id="weather" class="weather-card">
+                    <div class="weather-container">
+                        <div class="cloud front">
+                            <span class="left-front"></span>
+                            <span class="right-front"></span>
+                        </div>
+                        <span class="sun sunshine"></span>
+                        <span class="sun"></span>
+                        <div class="cloud back">
+                            <span class="left-back"></span>
+                            <span class="right-back"></span>
+                        </div>
+                    </div>
+
+                    <div class="weather-header">
+                        <span>Serpong, Tangerang Selatan<br>Indonesia</span>
+                        <span id="date"></span>
+                        <span id="clock" class="time"></span>
+                    </div>
+
+                    <span class="temp">23°</span>
+
+                    <div class="temp-scale">
+                        <span>Celcius</span>
+                    </div>
+                </div>
+
+                <div id="forecast" class="forecast-section">
+                    <div class="forecast-title">
+                        <h2>Weather Forecast</h2>
+                    </div>
+                    <div class="forecast-container">
+                        <div class="city-forecast" data-city="Jakarta">
+                            <h3>Jakarta</h3>
+                            <p class="weather-icon"><i class="fas fa-sun"></i></p>
+                            <p class="temperature">30°C</p>
+                            <p class="weather-description">Sunny</p>
+                        </div>
+                        <div class="city-forecast" data-city="Bandung">
+                            <h3>Bandung</h3>
+                            <p class="weather-icon"><i class="fas fa-cloud-rain"></i></p>
+                            <p class="temperature">22°C</p>
+                            <p class="weather-description">Light Rain</p>
+                        </div>
+                        <div class="city-forecast" data-city="Surabaya">
+                            <h3>Surabaya</h3>
+                            <p class="weather-icon"><i class="fas fa-cloud-sun"></i></p>
+                            <p class="temperature">28°C</p>
+                            <p class="weather-description">Partly Cloudy</p>
+                        </div>
+                        <div class="city-forecast" data-city="Yogyakarta">
+                            <h3>Yogyakarta</h3>
+                            <p class="weather-icon"><i class="fas fa-wind"></i></p>
+                            <p class="temperature">26°C</p>
+                            <p class="weather-description">Windy</p>
+                        </div>
+                        <div class="city-forecast" data-city="Denpasar">
+                            <h3>Denpasar</h3>
+                            <p class="weather-icon"><i class="fas fa-cloud-showers-heavy"></i></p>
+                            <p class="temperature">24°C</p>
+                            <p class="weather-description">Heavy Rain</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- Weather News Section -->
+            <section id="weather-news" class="weather-section">
+                <div class="weather-section-content">
+                    <h2>Weather News</h2>
+                    <p>Stay updated with the latest weather news</p>
+                </div>
+                <div class="notification">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h3>Get notified</h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Early Warning System -->
+        <div class="warning-system">
+            <h2>Warning!</h2>
+            <p>This is an important warning message.</p>
+            <button class="dismiss-btn" aria-label="Dismiss warning">&times;</button>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="site-footer">
+            <p>&copy; 2024 SkyWatch. All rights reserved.</p>
+    </div>
+    <script src="/JavaScript/home.js"></script>
+</body>
+
+</html>

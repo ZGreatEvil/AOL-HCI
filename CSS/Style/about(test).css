@@ -1,0 +1,253 @@
+/* Consolidate font imports */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/CSS/Assets/main_background.jpg');
+    background-size: cover; /* Ensure the image covers the whole screen */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+
+main {
+    margin-top: 40px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+}
+
+
+/* Navigation Bar Section */
+:root {
+    --font-primary: 'Josefin Sans', sans-serif;
+    --font-secondary: 'Lora', serif;
+    --color-primary: #ffffff; /* Adjust primary color as needed */
+    --color-background-hover: white; /* Background color for hover state */
+    --transition-speed: 0.3s; /* Transition speed for hover effects */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    font: 500 1.3em var(--font-primary);
+}
+
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.site-nav ul li {
+    margin: 0 20px;
+}
+
+.site-nav ul li a {
+    position: relative; /* Added for positioning the pseudo-element */
+    text-decoration: none;
+    transition: color var(--transition-speed) ease; /* Updated to only include color transition */
+    border-radius: 20px;
+    color: var(--color-primary);
+    overflow: hidden; /* Ensures the pseudo-element does not extend outside */
+}
+
+.site-nav ul li a::before {
+    content: '';    
+    position: absolute;
+    width: 0;
+    height: 2px; /* Height of the underline */
+    bottom: -30%; /* Position the underline at the bottom of the element */
+    left: 50%; /* Start from the center */
+    background-color: var(--color-primary); /* Color of the underline */
+    transition: width var(--transition-speed) ease, left var(--transition-speed) ease; /* Animate width and starting position */
+}
+
+.site-nav ul li a.about-page::before,
+.site-nav ul li a:hover::before {
+    width: 130%; /*rumus left = (width - 100%) / 2*/
+    left: -15%;
+}
+
+/* Content section */
+.main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    animation: fadeIn 1s;
+    width: 100%;
+}
+
+
+
+.first{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: 20px;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2pc;
+    padding: 20px;
+    letter-spacing: 1.6px;
+}
+
+.about-section h1{
+  color: cornflowerblue;
+  font-weight: 700;
+  font-size: 32px;
+  padding-bottom: 20px;
+}
+
+.about-section p{
+    font-weight: 500;
+    color: cornflowerblue;;
+    font-size: 18px;
+}
+
+.second{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.services-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2pc;
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s;
+    color: #fff;
+}
+
+.services-section:hover {
+    transform: scale(1.05); /* Adjust the scale value as needed */
+}
+
+.services-section ul {
+    list-style: circle;
+    padding-left: 20px;
+}
+
+.services-section li {
+    padding-top: 10px;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2pc;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    animation: fadeIn 1s;
+    color: #fff;
+    transition: transform 0.3s; /* Add a smooth scaling effect */
+}
+
+.contact-section:hover {
+    transform: scale(1.05); /* Adjust the scale value as needed */
+}
+
+.team-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2pc;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    animation: fadeIn 1s;
+    color: #fff;
+    transition: transform 0.3s; /* Add a smooth scaling effect */
+}
+
+.team-section:hover {
+    transform: scale(1.05); /* Adjust the scale value as needed */
+}
+
+.team-member p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 5px; */
+    padding-bottom: 10px;
+}
+
+.site-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    font: 500 1em 'Lora', serif;
+    color: var(--color-primary);
+}
